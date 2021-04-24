@@ -75,6 +75,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "niconiahi/generator-niconiahi",
+  "repository": "niconiahi/generators",
   "license": "MIT"
 }
