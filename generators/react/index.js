@@ -1,8 +1,8 @@
 const Generator = require("yeoman-generator");
 
 module.exports = class extends Generator {
-  async prompting() {
-    this.answers = await this.prompt([
+  async initialize() {
+    const answers = await this.prompt([
       {
         type: "list",
         name: "eslint",
@@ -16,7 +16,7 @@ module.exports = class extends Generator {
       },
     ]);
 
-    if (this.answers.eslint) {
+    if (answers.eslint) {
       if (answers.eslint.includes("typescript")) {
         this.composeWith(require.resolve("./eslint/typescript"));
       }
