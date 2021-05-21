@@ -15,7 +15,6 @@ module.exports = class extends Generator {
       },
     ]);
 
-    console.log('initialize ~ answers.eslint', answers.eslint)
     if (answers.eslint) {
       if (answers.eslint.includes("typescript")) {
         this.composeWith(require.resolve("./eslint/typescript"));
