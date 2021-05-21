@@ -3,6 +3,8 @@
   "version": "0.1.2",
   "description": "Carefully selected generators",
   "homepage": "https://github.com/niconiahi/generators",
+  "repository": "github:niconiahi/generators",
+  "license": "MIT",
   "author": {
     "name": "niconiahi",
     "email": "nicolas.accetta@gmail.com",
@@ -22,10 +24,5 @@
     "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
     "prettier": "^1.19.1"
-  },
-  "engines": {
-    "npm": ">= 4.0.0"
-  },
-  "repository": "niconiahi/generators",
-  "license": "MIT"
+  }
 }
