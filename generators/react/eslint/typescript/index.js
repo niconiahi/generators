@@ -7,7 +7,9 @@ module.exports = class extends Generator {
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "eslint",
+        "prettier",
         "eslint-config-prettier",
+        "eslint-plugin-prettier",
         "eslint-plugin-import",
         "eslint-plugin-jsx-a11y",
         "eslint-plugin-react",
@@ -22,13 +24,6 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath(".eslintrc"),
       this.destinationPath(".eslintrc")
-    );
-  }
-
-  tsWatcherTask() {
-    this.fs.copy(
-      this.templatePath("tasks.json"),
-      this.destinationPath(".vscode/tasks.json")
     );
   }
 };
