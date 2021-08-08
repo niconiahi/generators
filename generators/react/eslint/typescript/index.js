@@ -25,5 +25,15 @@ module.exports = class extends Generator {
       this.templatePath(".eslintrc"),
       this.destinationPath(".eslintrc")
     );
+
+    this.fs.copy(
+      this.templatePath("extensions.json"),
+      this.destinationPath(".vscode/extensions.json")
+    );
+
+    this.fs.copy(
+      this.templatePath("settings.json"),
+      this.destinationPath(".vscode/settings.json")
+    );
   }
 };
