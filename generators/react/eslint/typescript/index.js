@@ -35,5 +35,15 @@ module.exports = class extends Generator {
       this.templatePath("settings.json"),
       this.destinationPath(".vscode/settings.json")
     );
+
+    this.fs.copy(
+      this.templatePath(".prettierrc"),
+      this.destinationPath(".prettierrc")
+    );
+
+    this.fs.copy(
+      this.templatePath(".editorconfig"),
+      this.destinationPath(".editorconfig")
+    );
   }
 };
