@@ -2,19 +2,23 @@ const Generator = require("yeoman-generator");
 
 module.exports = class extends Generator {
   installDependencies() {
-    this.yarnInstall(
+    this.npmInstall(
       [
-        "@typescript-eslint/eslint-plugin",
-        "@typescript-eslint/parser",
+        "commitizen",
+        "@commitlint/cli",
+        "cz-conventional-changelog",
+        "@commitlint/config-conventional",
         "eslint",
         "prettier",
+        "typescript",
+        "eslint-plugin-react",
+        "eslint-plugin-import",
         "eslint-config-prettier",
         "eslint-plugin-prettier",
-        "eslint-plugin-import",
         "eslint-plugin-jsx-a11y",
-        "eslint-plugin-react",
         "eslint-plugin-react-hooks",
-        "typescript"
+        "@typescript-eslint/parser",
+        "@typescript-eslint/eslint-plugin"
       ],
       { "save-dev": true }
     );
@@ -24,6 +28,16 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath(".eslintrc"),
       this.destinationPath(".eslintrc")
+    );
+
+    this.fs.copy(
+      this.templatePath(".czrc"),
+      this.destinationPath(".czrc")
+    );
+
+    this.fs.copy(
+      this.templatePath("commitlint.config.js"),
+      this.destinationPath("commitlint.config.js")
     );
 
     this.fs.copy(
