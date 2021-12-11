@@ -4,10 +4,6 @@ module.exports = class extends Generator {
   installDependencies() {
     this.npmInstall(
       [
-        "commitizen",
-        "@commitlint/cli",
-        "cz-conventional-changelog",
-        "@commitlint/config-conventional",
         "eslint",
         "prettier",
         "typescript",
@@ -18,7 +14,11 @@ module.exports = class extends Generator {
         "eslint-plugin-jsx-a11y",
         "eslint-plugin-react-hooks",
         "@typescript-eslint/parser",
-        "@typescript-eslint/eslint-plugin"
+        "@typescript-eslint/eslint-plugin",
+        "commitizen",
+        "@commitlint/cli",
+        "cz-conventional-changelog",
+        "@commitlint/config-conventional"
       ],
       { "save-dev": true }
     );

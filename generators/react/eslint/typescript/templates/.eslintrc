@@ -2,8 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint",
-    "testing-library"
+    "@typescript-eslint"
   ],
   "parserOptions": {
     "ecmaVersion": 10,
@@ -13,12 +12,14 @@
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
-    "plugin:prettier/recommended",
-    "next"
+    "plugin:prettier/recommended"
   ],
   "settings": {
     "react": {
@@ -41,13 +42,6 @@
           "tsconfig.json"
         ]
       }
-    },
-    {
-      "files": [
-        "**/__tests__/**/*.[jt]s?(x)",
-        "**/?(*.)+(spec|test).[jt]s?(x)"
-      ],
-      "extends": ["plugin:testing-library/react"]
     }
   ],
   "rules": {
@@ -99,7 +93,7 @@
     "camelcase": "error",
     "use-isnan": "error",
     "no-unreachable": "error",
-    "import/no-unresolved": "error",
+    "import/no-unresolved": "off",
     "newline-before-return": "error",
     "no-useless-computed-key": "error",
     "eqeqeq": [
@@ -142,16 +136,6 @@
         "blankLine": "always",
         "prev": "const",
         "next": "if"
-      }
-    ],
-    "import/no-unused-modules": [
-      "error", 
-      {
-        "unusedExports": true, 
-        "ignoreExports": [
-          "./pages/**", 
-          "./cypress/**"
-        ]
       }
     ],
     "no-magic-numbers": [
