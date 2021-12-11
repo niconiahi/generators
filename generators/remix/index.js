@@ -5,7 +5,7 @@ module.exports = class extends Generator {
     const answers = await this.prompt([
       {
         type: "list",
-        name: "tailwind",
+        name: "css",
         message: "Which CSS configuration do you want?",
         choices: [
           {
@@ -20,8 +20,8 @@ module.exports = class extends Generator {
       },
     ]);
 
-    if (answers.tailwind) {
-      if (answers.tailwind.includes("tailwind")) {
+    if (answers.css) {
+      if (answers.css.includes("tailwind")) {
         this.composeWith(require.resolve("./css/tailwind"));
       }
     }
