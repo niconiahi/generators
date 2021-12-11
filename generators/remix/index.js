@@ -13,12 +13,21 @@ module.exports = class extends Generator {
           },
         ],
       },
+      {
+        type: "confirm",
+        name: "scripts",
+        message: "Should I install the base scripts for the workflow?",
+      },
     ]);
 
-    if (answers.eslint) {
-      if (answers.eslint.includes("tailwind")) {
+    if (answers.tailwind) {
+      if (answers.tailwind.includes("tailwind")) {
         this.composeWith(require.resolve("./css/tailwind"));
       }
+    }
+
+    if (Boolean(answers.scripts)) {
+      this.composeWith(require.resolve("./scripts"));
     }
   }
 };
