@@ -47,6 +47,7 @@
   "rules": {
     // react
     "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
     "react/sort-prop-types": "error",
     "react/self-closing-comp": "error",
     "react/jsx-boolean-value": "error",

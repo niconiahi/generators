@@ -31,11 +31,6 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath("styles/a11yreset.css"),
-      this.destinationPath("styles/a11yreset.css")
-    );
-
-    this.fs.copy(
       this.templatePath("styles/utilitary.css"),
       this.destinationPath("styles/utilitary.css")
     );
